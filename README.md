@@ -1,18 +1,18 @@
-# gruvbox-factory 🏭
-![License](https://img.shields.io/github/license/paulopacitti/gruvbox-factory?color=b8bb26&style=flat-square)
-![PyPI](https://img.shields.io/pypi/v/gruvbox-factory?color=fb4934&style=flat-square)
+# everforest-factory 🏭
+![License](https://img.shields.io/github/license/paulopacitti/everforest-factory?color=a7c080&style=flat-square)
+![PyPI](https://img.shields.io/pypi/v/everforest-factory?color=e67e80&style=flat-square)
 
-> _"The main focus when developing gruvbox is to keep colors easily distinguishable, contrast enough and still pleasant for the eyes"_ - [morhetz](https://github.com/morhetz)
+> _"Comfortable & Pleasant Color Scheme for Vim"_ - [sainnhe](https://github.com/sainnhe)
 
-![example of gruvbox-factory](https://raw.githubusercontent.com/paulopacitti/gruvbox-factory/master/example.png)
+![example of everforest-factory](https://raw.githubusercontent.com/paulopacitti/everforest-factory/master/example.png)
 
-- A simple `cli` to ~~convert~~ manufacture a [gruvbox](https://github.com/morhetz/gruvbox) themed wallpaper.
-- Three color palettes: *panther* "pink", *snoopy* white and "smooth" mix.
+- A simple `cli` to ~~convert~~ manufacture an [everforest](https://github.com/sainnhe/everforest) themed wallpaper.
+- Three color palettes: *dark*, *light* and smooth *mix*.
 
 ## Installation ️and usage
-`pip install gruvbox-factory`
+`pip install everforest-factory`
 
-You can type `gruvbox-factory -h` to check out how to use Gruvbox Factory.
+You can type `everforest-factory -h` to check out how to use Everforest Factory.
 
 
 ## Contributors

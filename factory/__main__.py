@@ -13,7 +13,7 @@ from PIL.Image import Image as PilImage
 from PIL.ImageFile import ImageFile
 from rich import console, panel
 
-Palette = Literal["pink", "white", "mix"]
+Palette = Literal["dark", "light", "mix"]
 Image = str
 Images = list[Image]
 
@@ -43,7 +43,7 @@ class Parser(argparse.ArgumentParser):
         Raises: None.
         """
         super().__init__(
-            description="A simple cli to manufacture Gruvbox themed wallpapers.",
+            description="A simple cli to manufacture Everforest themed wallpapers.",
             prefix_chars="-",
             argument_default=None,
             conflict_handler="error",
@@ -52,11 +52,11 @@ class Parser(argparse.ArgumentParser):
         self.add_argument(
             "-p",
             "--palette",
-            choices=["white", "pink", "mix"],
+            choices=["dark", "light", "mix"],
             nargs="?",
-            default="pink",
-            const="pink",
-            help="choose your palette, panther 'pink' (default), snoopy 'white' or smooth 'mix'",
+            default="dark",
+            const="dark",
+            help="choose your palette, 'dark' (default), 'light' or smooth 'mix'",
         )
         self.add_argument(
             "-i", "--images", nargs="+", type=str, help="path(s) to the image(s)."
@@ -86,9 +86,9 @@ def is_palette(value: str | None) -> bool:
     Args:
         value (str | None): A palette value.
     Returns:
-        bool: True if value is one of "pink", "white", or "mix"; otherwise False.
+        bool: True if value is one of "dark", "light", or "mix"; otherwise False.
     """
-    return value in {"pink", "white", "mix"}
+    return value in {"dark", "light", "mix"}
 
 
 def signal_handler(signum: int, _frame: FrameType | None = None) -> None:
@@ -127,9 +127,9 @@ class Console(console.Console):
         """
         self.print(
             panel.Panel(
-                "🏭 [bold green] Gruvbox Factory [/] 🏭",
+                "🏭 [bold green] Everforest Factory [/] 🏭",
                 expand=False,
-                border_style="yellow",
+                border_style="green",
             )
         )
 
@@ -141,14 +141,14 @@ def select_palette() -> Palette:
                  returns "white".
     """
     prompt: str = (
-        "🎨 [bold yellow]Palette (panther 'pink', snoopy 'white' or smooth 'mix'):[/] "
+        "🎨 [bold yellow]Palette ('dark', 'light' or smooth 'mix'):[/] "
     )
-    options: list[str] = ["pink", "white", "mix"]
+    options: list[str] = ["dark", "light", "mix"]
 
     value: Any = pick(options, title=prompt, clear_screen=False)
     _, selection = value
 
-    return selection if is_palette(selection) else "white"
+    return selection if is_palette(selection) else "dark"
 
 
 @dataclass
@@ -175,14 +175,14 @@ class Factory(ImageGoNord.GoNord):
         self.reset_palette()
 
 
-class GruvboxFactory:
+class EverforestFactory:
     """
-    Main class to process Gruvbox themed wallpapers.
+    Main class to process Everforest themed wallpapers.
     """
 
     def __init__(self) -> None:
         """
-        Initializes GruvboxFactory.
+        Initializes EverforestFactory.
 
         Registers:
             SIGINT signal with signal_handler.
@@ -213,14 +213,14 @@ class GruvboxFactory:
         Args:
             palette (str): The palette name.
         Reads:
-            File "gruvbox-{palette}.txt" in the directory of this script.
+            File "everforest-{palette}.txt" in the directory of this script.
         Raises:
             SystemExit: If the palette file is not found.
         Returns:
             None.
         """
         cwd: Path = Path(__file__).parent.absolute()
-        path: Path = cwd / f"gruvbox-{palette}.txt"
+        path: Path = cwd / f"everforest-{palette}.txt"
         colors: list[str] = []
 
         try:
@@ -269,7 +269,7 @@ class GruvboxFactory:
         image: PilImage | ImageFile = self.factory.open_image(path)
         parent = os.path.dirname(path)
         base = os.path.basename(path)
-        dest = os.path.join(parent, f"gruvbox_{base}")
+        dest = os.path.join(parent, f"everforest_{base}")
 
         self.console.print(f"🔨 [yellow]manufacturing '{base}' -> {dest}[/]")
         self.factory.convert_image(image, save_path=dest, parallel_threading=True)
@@ -308,16 +308,16 @@ def main() -> None:
     Main function of the script.
 
     Performs:
-        - Argument parsing via GruvboxFactory.parser.
+        - Argument parsing via EverforestFactory.parser.
         - Palette determination and palette file processing.
-        - Image processing via GruvboxFactory.
+        - Image processing via EverforestFactory.
     Raises:
         SystemExit: Exits with code from parser.print_help() if insufficient args,
                     or code 1 if image processing fails.
     Returns:
         None.
     """
-    factory = GruvboxFactory()
+    factory = EverforestFactory()
 
     factory.parser.parse()
     image_paths = factory.parser.arguments.images
