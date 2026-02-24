@@ -5,8 +5,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "everforest-factory"
 version = "2.0.0"
-description = "convert any image to the everforest palette!"
-authors = [{ name = "Paulo Pacitti", email = "ppacitti@outlook.com" }]
+description = "convert any image to the everforest palette! (fork of gruvbox-factory)"
+authors = [{ name = "dorpivovar" }]
 readme = "README.md"
 requires-python = ">=3.13.1"
 license = { text = "MIT" }
@@ -45,8 +45,9 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/paulopacitti/everforest-factory"
-"Bug Tracker" = "https://github.com/paulopacitti/everforest-factory/issues"
+"Homepage" = "https://github.com/dorpivovar/everforest-factory"
+"Bug Tracker" = "https://github.com/dorpivovar/everforest-factory/issues"
+"Upstream" = "https://github.com/paulopacitti/gruvbox-factory"
 
 [project.scripts]
 everforest-factory = "factory.__main__:main"

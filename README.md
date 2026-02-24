@@ -1,10 +1,12 @@
 # everforest-factory 🏭
-![License](https://img.shields.io/github/license/paulopacitti/everforest-factory?color=a7c080&style=flat-square)
+![License](https://img.shields.io/github/license/dorpivovar/everforest-factory?color=a7c080&style=flat-square)
 ![PyPI](https://img.shields.io/pypi/v/everforest-factory?color=e67e80&style=flat-square)
+
+> A fork of [gruvbox-factory](https://github.com/paulopacitti/gruvbox-factory) by [@paulopacitti](https://github.com/paulopacitti), adapted to the [Everforest](https://github.com/sainnhe/everforest) color scheme.
 
 > _"Comfortable & Pleasant Color Scheme for Vim"_ - [sainnhe](https://github.com/sainnhe)
 
-![example of everforest-factory](https://raw.githubusercontent.com/paulopacitti/everforest-factory/master/example.png)
+![example of everforest-factory](https://raw.githubusercontent.com/dorpivovar/everforest-factory/master/example.png)
 
 - A simple `cli` to ~~convert~~ manufacture an [everforest](https://github.com/sainnhe/everforest) themed wallpaper.
 - Three color palettes: *dark*, *light* and smooth *mix*.
@@ -24,7 +26,7 @@ pip install everforest-factory
 ### From source
 
 ```bash
-git clone https://github.com/paulopacitti/everforest-factory.git
+git clone https://github.com/dorpivovar/everforest-factory.git
 cd everforest-factory
 pip install .
 ```
@@ -104,8 +106,9 @@ wallpaper.png → everforest_wallpaper.png
 | `mix`   | Extended blend of both dark and light palettes with intermediate tones |
 
 
-## Contributors
-Thanks for all the have been working with me to make this tool to craft beautiful wallpapers 🧡 
+## Acknowledgements
+
+This project is a fork of [gruvbox-factory](https://github.com/paulopacitti/gruvbox-factory) by [@paulopacitti](https://github.com/paulopacitti) and its contributors:
 - [@H4ppy-04](https://github.com/H4ppy-04)
 - [@Gabulhas](https://github.com/Gabulhas)
 - [@hza2002](https://github.com/hza2002)
@@ -114,4 +117,6 @@ Thanks for all the have been working with me to make this tool to craft beautifu
 - [@Kuuhhl](https://github.com/Kuuhhl)
 - [@marcelofern](https://github.com/marcelofern)
 
-Also, I could not do this without the [ImageGoNord](https://github.com/Schroedinger-Hat/ImageGoNord-Web) project, go check them out!
+Built on top of [ImageGoNord](https://github.com/Schroedinger-Hat/ImageGoNord-Web).
+
+Everforest color scheme by [sainnhe](https://github.com/sainnhe/everforest).
