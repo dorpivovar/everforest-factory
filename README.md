@@ -1,4 +1,4 @@
-# everforest-factory 🏭
+# everforest-factory 🌲
 ![License](https://img.shields.io/github/license/dorpivovar/everforest-factory?color=a7c080&style=flat-square)
 ![PyPI](https://img.shields.io/pypi/v/everforest-factory?color=e67e80&style=flat-square)
 
